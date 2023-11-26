@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { iEndpoint, iResult } from '../types'
+import { getUrl } from '../utils/getUrl'
 import Display from './Display'
 import Endpoints from './Endpoints'
 import Heading from './Heading'
@@ -10,18 +11,10 @@ const Playground = () => {
   const [result, setResult] = useState<iResult>(null)
 
   const searchHandler = async (text: string) => {
-    console.log(text)
+    const res = await fetch(getUrl(text, 'v1'))
+    const result = await res.json()
 
-    const json = {
-      name: 'John Doe',
-      age: 32,
-      email: 'johndoe@example.com',
-      url: ''
-    }
-
-    json.url = text
-
-    setResult(json)
+    setResult(result)
   }
 
   return (

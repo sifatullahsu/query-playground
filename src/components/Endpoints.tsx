@@ -13,7 +13,7 @@ const Endpoints = ({ endpoint, setEndpoint }: iProps) => {
         <input
           type="radio"
           name="endpoints"
-          className="radio radio-xs radio-info"
+          className="radio radio-xs radio-warning"
           checked={endpoint === 'books' ? true : false}
           onChange={() => setEndpoint('books')}
         />
@@ -23,7 +23,7 @@ const Endpoints = ({ endpoint, setEndpoint }: iProps) => {
         <input
           type="radio"
           name="endpoints"
-          className="radio radio-xs radio-info"
+          className="radio radio-xs radio-warning"
           checked={endpoint === 'orders' ? true : false}
           onChange={() => setEndpoint('orders')}
         />

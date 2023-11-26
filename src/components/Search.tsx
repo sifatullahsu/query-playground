@@ -32,7 +32,7 @@ const Search = ({ endpoint, searchHandler }: iProps) => {
         className="pl-16 pr-12 py-3 rounded-full w-full focus-visible:outline-none text-[#565656]"
         autoComplete="off"
         onChange={changeHandler}
-        onKeyDown={e => e.key === 'Enter' && searchHandler('ENTER PRESSED ' + value)}
+        onKeyDown={e => e.key === 'Enter' && searchHandler(value)}
         value={value}
       />
       <HiOutlineSearch className="absolute top-3 left-4 text-2xl border-r-2 pr-2 w-[35px]" />
