@@ -9,6 +9,7 @@ type iProps = {
 const Endpoints = ({ endpoint, setEndpoint }: iProps) => {
   return (
     <div className="flex mb-2 space-x-2">
+      <div className="text-xs mt-[9px] text-white opacity-50">MongoDB Collections:</div>
       <label className="label cursor-pointer">
         <input
           type="radio"
