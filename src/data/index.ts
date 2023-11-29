@@ -5,14 +5,11 @@ export const bookConstant = `
     all: 'OPEN',
     filter: [
       ['title', ['$regex'], 'OPEN'],
-      ['slug', ['$eq', '$ne'], 'OPEN'],
-      ['image', ['$eq', '$ne'], 'OPEN'],
       ['price', ['$eq', '$ne', '$gt', '$gte', '$lt', '$lte', '$in', '$nin'], 'OPEN'],
       ['stock', ['$eq', '$ne', '$gt', '$gte', '$lt', '$lte', '$mod'], 'OPEN'],
-      ['language', ['$eq', '$ne'], 'OPEN'],
-      ['author', ['$eq', '$ne', '$exists', '$type'], 'OPEN'],
+      ['author', ['$eq', '$ne'], 'OPEN'],
       ['publisher', ['$eq', '$ne', '$exists', '$type'], 'OPEN'],
-      ['category', ['$eq', '$ne', '$exists', '$type'], 'OPEN'],
+      ['category', ['$eq', '$ne'], 'OPEN'],
       ['tags', ['$eq', '$ne', '$all', '$size'], 'OPEN'],
       ['seller', ['$eq', '$ne'], 'OPEN']
     ]

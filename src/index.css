@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.example-icon {
+  @apply text-white inline absolute bottom-1 text-3xl p-2 rounded-lg hover:bg-warning;
+}
+
+.tab {
+  height: unset;
+  color: #fff;
+}
+
+.tab.tab-active {
+  @apply !bg-warning rounded-lg
+}
+
+.tab-content {
+  @apply p-5 pt-2
+}
+
+@media screen and (max-width: 767px) {
+  .tab-content {
+    @apply p-0
+  }
+}

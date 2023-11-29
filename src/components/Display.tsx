@@ -18,7 +18,7 @@ const Display = ({ result }: { result: iResult }) => {
                 fontSize: '14px'
               }}
             >
-              {JSON.stringify(result.data, null, 2)}
+              {JSON.stringify(result, null, 2)}
             </ReactSyntaxHighlighter>
           </>
         )}
