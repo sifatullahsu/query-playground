@@ -1,5 +1,6 @@
 import ReactSyntaxHighlighter from 'react-syntax-highlighter'
 import { anOldHope, monoBlue as theme } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import notFound from '../assets/not-found.jpg'
 import { bookConstant, orderConstant } from '../data'
 import { iEndpoint, iQueryResult, iResult } from '../types'
 
@@ -13,7 +14,7 @@ const Display = ({ result, queryResult, endpoint }: iProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
       <div className="col-span1">
-        {result && (
+        {result ? (
           <>
             {/* <div className="text-sm text-accent pl-2">Last fetched: 1 min ago</div> */}
             <ReactSyntaxHighlighter
@@ -27,6 +28,14 @@ const Display = ({ result, queryResult, endpoint }: iProps) => {
               {JSON.stringify(result, null, 2)}
             </ReactSyntaxHighlighter>
           </>
+        ) : (
+          <div>
+            <img src={notFound} width={150} alt="" />
+            <p className="text-sm text-warning">
+              Press enter in the search box to
+              <br /> retrieve the query data.
+            </p>
+          </div>
         )}
       </div>
       <div>
