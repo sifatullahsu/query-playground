@@ -1,30 +1,26 @@
 import { useState } from 'react'
 import { toast } from 'react-toastify'
-import { iEndpoint, iQueryResult, iResult, iRole } from '../types'
+import { iEndpoint, iQueryResult, iResult, iUserTypes } from '../types'
+import { getToken } from '../utils/getToken'
 import { getUrl } from '../utils/getUrl'
 import Display from './Display'
 import Endpoints from './Endpoints'
-import Example from './Example'
+import Extender from './Extender'
 import Heading from './Heading'
 import Search from './Search'
 import Token from './Token'
 
 const Playground = () => {
   const [endpoint, setEndpoint] = useState<iEndpoint>('books')
-  const [token, setToken] = useState<iRole>('admin')
+  const [token, setToken] = useState<iUserTypes>('admin')
   const [result, setResult] = useState<iResult>(null)
   const [queryResult, setQueryResult] = useState<iQueryResult>(null)
 
   const searchHandler = async (text: string) => {
-    const admin = import.meta.env.VITE_ADMIN_TOKEN
-    const seller = import.meta.env.VITE_SELLER_TOKEN
-    const buyer = import.meta.env.VITE_BUYER_TOKEN
-
     const res = await fetch(getUrl(text, 'v1'), {
       method: 'GET',
       headers: {
-        authorization:
-          token === 'admin' ? admin : token === 'seller' ? seller : token === 'buyer' ? buyer : ''
+        authorization: getToken(token)
       }
     })
     const result = await res.json()
@@ -37,6 +33,7 @@ const Playground = () => {
     } else {
       toast.error(result.message)
       setResult(result)
+      setQueryResult(null)
     }
   }
 
@@ -47,7 +44,7 @@ const Playground = () => {
         <Endpoints endpoint={endpoint} setEndpoint={setEndpoint} />
         <Search endpoint={endpoint} searchHandler={searchHandler} />
         <Token token={token} setToken={setToken} />
-        <Example endpoint={endpoint} />
+        <Extender endpoint={endpoint} />
       </div>
       <Display result={result} queryResult={queryResult} endpoint={endpoint} />
     </div>

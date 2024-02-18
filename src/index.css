@@ -16,7 +16,7 @@
 }
 
 .tab-content {
-  @apply p-5 pt-2
+  @apply p-5 pt-2 pb-0
 }
 
 @media screen and (max-width: 767px) {

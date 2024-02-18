@@ -1,8 +1,8 @@
 import ReactSyntaxHighlighter from 'react-syntax-highlighter'
 import { anOldHope, monoBlue as theme } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import notFound from '../assets/not-found.jpg'
-import { bookConstant, orderConstant } from '../data'
 import { iEndpoint, iQueryResult, iResult } from '../types'
+import { getRules } from '../utils/getRules'
 
 type iProps = {
   result: iResult
@@ -64,7 +64,7 @@ const Display = ({ result, queryResult, endpoint }: iProps) => {
             borderRadius: '14px'
           }}
         >
-          {endpoint === 'books' ? bookConstant : endpoint === 'orders' ? orderConstant : ''}
+          {getRules(endpoint)}
         </ReactSyntaxHighlighter>
       </div>
     </div>

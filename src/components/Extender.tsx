@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa'
 import { iEndpoint } from '../types'
+import Package from './Package'
 import TabContent from './TabContent'
 import TabHeading from './TabHeading'
 
-const Example = ({ endpoint }: { endpoint: iEndpoint }) => {
+const Extender = ({ endpoint }: { endpoint: iEndpoint }) => {
   const [open, setOpen] = useState(true)
   const [tab, setTab] = useState(1)
 
@@ -15,6 +16,9 @@ const Example = ({ endpoint }: { endpoint: iEndpoint }) => {
           <div className="font-semibold mt-5 mb-2">Example queries:</div>
           <TabHeading tab={tab} setTab={setTab} />
           <TabContent tab={tab} endpoint={endpoint} />
+
+          <div className="font-semibold mt-5 mb-2">Package info:</div>
+          <Package />
         </div>
       )}
       <div className="flex justify-center">
@@ -28,4 +32,4 @@ const Example = ({ endpoint }: { endpoint: iEndpoint }) => {
   )
 }
 
-export default Example
+export default Extender

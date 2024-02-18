@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction } from 'react'
-import { iRole } from '../types'
+import { iUserTypes } from '../types'
 
 type iProps = {
-  token: iRole
-  setToken: Dispatch<SetStateAction<iRole>>
+  token: iUserTypes
+  setToken: Dispatch<SetStateAction<iUserTypes>>
 }
 
 const Token = ({ token, setToken }: iProps) => {
@@ -25,20 +25,70 @@ const Token = ({ token, setToken }: iProps) => {
           type="radio"
           name="tokens"
           className="radio radio-xs radio-warning"
-          checked={token === 'seller' ? true : false}
-          onChange={() => setToken('seller')}
+          checked={token === 'seller_01' ? true : false}
+          onChange={() => setToken('seller_01')}
         />
-        <span className="label-text text-base-100 pl-2">seller</span>
+        <span className="label-text text-base-100 pl-2">seller¹</span>
       </label>
       <label className="label cursor-pointer">
         <input
           type="radio"
           name="tokens"
           className="radio radio-xs radio-warning"
-          checked={token === 'buyer' ? true : false}
-          onChange={() => setToken('buyer')}
+          checked={token === 'seller_02' ? true : false}
+          onChange={() => setToken('seller_02')}
         />
-        <span className="label-text text-base-100 pl-2">buyer</span>
+        <span className="label-text text-base-100 pl-2">seller²</span>
+      </label>
+      <label className="label cursor-pointer">
+        <input
+          type="radio"
+          name="tokens"
+          className="radio radio-xs radio-warning"
+          checked={token === 'buyer_01' ? true : false}
+          onChange={() => setToken('buyer_01')}
+        />
+        <span className="label-text text-base-100 pl-2">buyer¹</span>
+      </label>
+      <label className="label cursor-pointer">
+        <input
+          type="radio"
+          name="tokens"
+          className="radio radio-xs radio-warning"
+          checked={token === 'buyer_02' ? true : false}
+          onChange={() => setToken('buyer_02')}
+        />
+        <span className="label-text text-base-100 pl-2">buyer²</span>
+      </label>
+      <label className="label cursor-pointer">
+        <input
+          type="radio"
+          name="tokens"
+          className="radio radio-xs radio-warning"
+          checked={token === 'buyer_03' ? true : false}
+          onChange={() => setToken('buyer_03')}
+        />
+        <span className="label-text text-base-100 pl-2">buyer³</span>
+      </label>
+      <label className="label cursor-pointer">
+        <input
+          type="radio"
+          name="tokens"
+          className="radio radio-xs radio-warning"
+          checked={token === 'buyer_04' ? true : false}
+          onChange={() => setToken('buyer_04')}
+        />
+        <span className="label-text text-base-100 pl-2">buyer⁴</span>
+      </label>
+      <label className="label cursor-pointer">
+        <input
+          type="radio"
+          name="tokens"
+          className="radio radio-xs radio-warning"
+          checked={token === 'without_token' ? true : false}
+          onChange={() => setToken('without_token')}
+        />
+        <span className="label-text text-base-100 pl-2">without token</span>
       </label>
     </div>
   )

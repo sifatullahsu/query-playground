@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from 'react'
-import { HiOutlineDotsVertical, HiOutlineSearch } from 'react-icons/hi'
+import { BiSolidArrowToRight } from 'react-icons/bi'
+import { HiOutlineSearch } from 'react-icons/hi'
 import { iEndpoint } from '../types'
 
 type iProps = {
@@ -36,7 +37,10 @@ const Search = ({ endpoint, searchHandler }: iProps) => {
         value={value}
       />
       <HiOutlineSearch className="absolute top-3 left-4 text-2xl border-r-2 pr-2 w-[35px]" />
-      <HiOutlineDotsVertical className="absolute top-[.6rem] right-4 text-xl w-[30px] h-[30px] cursor-pointer hover:bg-slate-100 p-1 rounded-full" />
+      <BiSolidArrowToRight
+        className="absolute top-[.6rem] right-4 text-xl w-[30px] h-[30px] cursor-pointer hover:bg-slate-100 p-1 rounded-full"
+        onClick={() => searchHandler(value)}
+      />
     </div>
   )
 }

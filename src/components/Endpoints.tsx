@@ -30,6 +30,46 @@ const Endpoints = ({ endpoint, setEndpoint }: iProps) => {
         />
         <span className="label-text text-base-100 pl-2">orders</span>
       </label>
+      <label className="label cursor-pointer">
+        <input
+          type="radio"
+          name="endpoints"
+          className="radio radio-xs radio-warning"
+          checked={endpoint === 'feedbacks' ? true : false}
+          onChange={() => setEndpoint('feedbacks')}
+        />
+        <span className="label-text text-base-100 pl-2">feedbacks</span>
+      </label>
+      <label className="label cursor-pointer">
+        <input
+          type="radio"
+          name="endpoints"
+          className="radio radio-xs radio-warning"
+          checked={endpoint === 'users' ? true : false}
+          onChange={() => setEndpoint('users')}
+        />
+        <span className="label-text text-base-100 pl-2">users</span>
+      </label>
+      <label className="label cursor-pointer">
+        <input
+          type="radio"
+          name="endpoints"
+          className="radio radio-xs radio-warning"
+          checked={endpoint === 'categories' ? true : false}
+          onChange={() => setEndpoint('categories')}
+        />
+        <span className="label-text text-base-100 pl-2">categories</span>
+      </label>
+      <label className="label cursor-pointer">
+        <input
+          type="radio"
+          name="endpoints"
+          className="radio radio-xs radio-warning"
+          checked={endpoint === 'tags' ? true : false}
+          onChange={() => setEndpoint('tags')}
+        />
+        <span className="label-text text-base-100 pl-2">tags</span>
+      </label>
     </div>
   )
 }
